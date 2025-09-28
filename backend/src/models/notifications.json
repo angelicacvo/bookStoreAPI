@@ -1,0 +1,18 @@
+[
+  {
+    "notificationId": 1,
+    "userId": 1,
+    "type": "loan_due",
+    "message": "Tu préstamo del libro '1984' vence pronto.",
+    "read": false,
+    "created_at": "2025-02-18T09:00:00.000Z"
+  },
+  {
+    "notificationId": 2,
+    "userId": 2,
+    "type": "loan_request",
+    "message": "Ana Gómez quiere pedir prestado 'Cien Años de Soledad'.",
+    "read": true,
+    "created_at": "2025-02-10T14:45:00.000Z"
+  }
+]

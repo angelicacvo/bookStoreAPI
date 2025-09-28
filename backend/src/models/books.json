@@ -1,0 +1,28 @@
+[
+  {
+    "bookId": 1,
+    "title": "Cien Años de Soledad",
+    "author": "Gabriel García Márquez",
+    "isbn": "9780307474728",
+    "genre": "Realismo mágico",
+    "language": "Español",
+    "cover_url": "https://example.com/cien_anos.jpg",
+    "description": "Obra maestra de Gabriel García Márquez sobre la familia Buendía.",
+    "ownerId": 1,
+    "status": "available",
+    "createdAt": "2025-01-25T12:00:00.000Z"
+  },
+  {
+    "bookId": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "isbn": "9780451524935",
+    "genre": "Distopía",
+    "language": "Inglés",
+    "cover_url": "https://example.com/1984.jpg",
+    "description": "Novela distópica que explora un régimen totalitario.",
+    "ownerId": 2,
+    "status": "borrowed",
+    "createdAt": "2025-02-02T10:15:00.000Z"
+  }
+]

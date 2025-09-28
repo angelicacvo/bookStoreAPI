@@ -1,0 +1,134 @@
+<------------ ( 1 ) ------------>
+Crear JSONs de estos objetos con datos de ejemplo.
+users
+Usuarios de la plataforma.
+id (PK)
+name
+last_name
+email (único)
+password_hash
+phone (opcional)
+address (o manejar en tabla aparte si se necesitan varias)
+role (ej: "user", "admin")
+created_at
+updated_at
+subscriptions
+Modelo de suscripción que contrata el usuario.
+id (PK)
+user_id (FK → users.id)
+plan_id (FK → plans.id)
+start_date
+end_date
+status ("active", "expired", "canceled")
+plans
+Planes de suscripción.
+id (PK)
+name (ej: Básico, Premium)
+price (mensual/anual)
+max_books_per_month
+description
+books
+Libros que los usuarios registran.
+id (PK)
+title
+author
+isbn (opcional)
+genre 
+language
+cover_url (imagen)
+description
+owner_id (FK → users.id, el usuario que lo ofrece)
+status ("available", "borrowed", "inactive")
+created_at
+book_copies (opcional según el modelo)
+Si un mismo libro puede existir en varias copias físicas.
+id (PK)
+book_id (FK → books.id)
+condition ("new", "good", "worn")
+availability_status
+loans
+Registra los préstamos.
+id (PK)
+book_id (FK → books.id)
+borrower_id (FK → users.id)
+owner_id (FK → users.id)
+loan_date
+return_date (esperada)
+actual_return_date (real)
+status ("active", "returned", "late", "canceled")
+reviews
+Para reseñas de libros o del usuario que presta.
+id (PK)
+book_id (FK → books.id)
+reviewer_id (FK → users.id)
+rating (1-5)
+comment
+created_at
+notifications
+Notificaciones en la app/web.
+id (PK)
+user_id (FK → users.id)
+type ("loan_request", "loan_due", etc.)
+message
+read (boolean)
+created_at
+
+<------------ ( 2 ) ------------>
+Actualmente cualquier persona puede crear, editar o borrar libros en la API.
+La dirección del club de lectura quiere que solo usuarios autenticados puedan hacer esas operaciones. Además, los alumnos quieren permitir acceso desde un frontend que está corriendo en otro puerto (http://localhost:5173/).
+Objetivos:
+Integrar CORS para permitir peticiones desde un frontend.
+Crear un middleware de autenticación simple basado en tokens (mock, sin JWT real, basta con un header Authorization).
+Crear un middleware de logging que registre cada petición (method, url, timestamp).
+Aplicar los middlewares a las rutas de libros.
+Pasos propuestos:
+Configurar CORS
+Instalar y usar el paquete cors.
+Permitir solo el dominio http://localhost:5173/.
+Middleware de logging
+Crear un middleware que imprima en consola algo como:
+[2025-09-22 14:35:20] GET /books
+Middleware de autenticación
+Verificar si el request trae un header Authorization: Bearer <token>.
+Si no está o no es válido, responder con 401 Unauthorized.
+Si es válido, dejar pasar al controlador.
+Para simplificar, el token válido puede estar hardcodeado (ej: "12345").
+Aplicar middlewares
+logger → a todas las rutas (app.use).
+auth → solo a rutas protegidas (POST, PUT, DELETE en /books).
+Resultado esperado:
+Los estudiantes podrán seguir haciendo GET /books sin token.
+Si intentan hacer POST /books sin Authorization, la API devuelve 401.
+Si incluyen Authorization: Bearer 12345, la operación funciona.
+El servidor registra en consola cada petición.
+Desde el frontend en otro puerto (5173) se podrán consumir los datos gracias a CORS.
+Luego
+Crear un middleware de validación que no deje crear libros sin title o author.
+Usar next() para encadenar varios middlewares en la misma ruta.
+
+<------------ ( 3 ) ------------>
+En la plataforma de préstamos, a veces los usuarios olvidan devolver los libros. Queremos implementar un sistema de notificaciones automáticas por correo electrónico que se ejecute periódicamente.
+Objetivos de la actividad
+Nodemailer → enviar un correo de recordatorio al usuario que tiene un libro pendiente de devolver.
+CronJobs → programar una tarea que corra cada minuto (simulación) para verificar préstamos vencidos y mandar correos.
+Pasos propuestos
+Nodemailer
+Configurar un transporter (con gmail).
+Enviar un correo tipo:
+Asunto: Recordatorio de devolución
+Hola, recuerda devolver el libro "Clean Code" que ya venció el 21/09/2025.
+CronJob
+Usar node-cron para correr una tarea cada minuto.
+La tarea debe:
+Detectar los vencidos.
+Mandar correos con Nodemailer.
+Resultado esperado
+Cada minuto se revisan los préstamos.
+Si hay libros vencidos, los usuarios reciben un correo de recordatorio.
+En consola se imprimen logs como:
+[2025-09-22 10:35:00] Se envió recordatorio a user1@test.com por el libro Clean Code
+Por ultimo
+Usar un middleware para validar que el dueDate tenga formato válido. (ZOD)
+Enviar también el número de días de atraso en el correo.
+Integrar con un frontend simple que muestre el estado de los préstamos, consumiendo el mismo endpoint con Axios desde el cliente.
+https://zod.dev/

@@ -1,0 +1,18 @@
+[
+  {
+    "reviewId": 1,
+    "bookId": 1,
+    "userId": 2,
+    "rating": 5,
+    "comment": "Un clásico que todos deberían leer.",
+    "createdAt": "2025-02-12T15:00:00.000Z"
+  },
+  {
+    "reviewId": 2,
+    "bookId": 2,
+    "userId": 1,
+    "rating": 4,
+    "comment": "Muy bueno, aunque un poco denso.",
+    "createdAt": "2025-02-15T18:20:00.000Z"
+  }
+]

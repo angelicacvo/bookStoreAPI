@@ -1,0 +1,14 @@
+[
+  {
+    "bookCopyId": 1,
+    "bookId": 1,
+    "condition": "new",
+    "avaiabilityStatus": "available"
+  },
+  {
+    "bookCopyId": 2,
+    "bookId": 2,
+    "condition": "good",
+    "avaiabilityStatus": "borrowed"
+  }
+]

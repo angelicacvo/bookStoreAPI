@@ -1,0 +1,16 @@
+[
+  {
+    "subscriptionPlanId": "plan_1",
+    "name": "Básico",
+    "price": 20000,
+    "max_books_per_month": 3,
+    "description": "Acceso básico con hasta 3 libros por mes."
+  },
+  {
+    "subscriptionPlanId": "plan_2",
+    "name": "Premium",
+    "price": 50000,
+    "max_books_per_month": 10,
+    "description": "Acceso premium con hasta 10 libros por mes."
+  }
+]

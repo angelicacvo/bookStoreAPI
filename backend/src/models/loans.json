@@ -1,0 +1,20 @@
+[
+  {
+    "loanId": 1,
+    "bookId": 2,
+    "userId": 1,
+    "loanDate": "2025-02-10T00:00:00.000Z",
+    "returnDate": "2025-02-20T00:00:00.000Z",
+    "actualReturnDate": null,
+    "status": "active"
+  },
+  {
+    "loanId": 2,
+    "bookId": 1,
+    "userId": 2,
+    "loanDate": "2025-01-05T00:00:00.000Z",
+    "returnDate": "2025-01-15T00:00:00.000Z",
+    "actualReturnDate": "2025-01-14T00:00:00.000Z",
+    "status": "returned"
+  }
+]
