@@ -1,0 +1,58 @@
+:root {
+  --light-green: #588157;
+  --light-pink: #ffa5ab;
+  --lighter-green: #a3b18a;
+}
+
+body * {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: #a3b18a;
+}
+
+.searchbar,
+.edit-books-header,
+.index-top,
+.login-main,
+.main-title {
+  margin: 2rem 5rem;
+}
+
+.search-books-cards,
+.index-books-cards {
+  margin: 2rem 10rem;
+}
+
+.btn-secondary {
+  background-color: var(--lighter-green);
+}
+
+.login-form-container {
+  margin: 4rem 20rem;
+  background-color: var(--light-green);
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  box-shadow: grey 7px 5px 9px;
+}
+
+.search-books-table {
+  justify-content: center;
+  margin: 2rem 8rem;
+}
+
+.table-buttons {
+  display: flex;
+  justify-content: center;
+}
