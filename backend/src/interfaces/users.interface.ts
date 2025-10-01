@@ -13,6 +13,6 @@ interface IUser {
     updatedAt: Date,
 }
 
-type IAuthUser = Pick<IUser, "userId" | "email" | "passwordHash" >
+type IAuthUser = Pick<IUser, "email" | "passwordHash" >
 
 export type { IUser, IAuthUser }

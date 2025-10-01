@@ -24,5 +24,15 @@
     "ownerId": 2,
     "status": "borrowed",
     "createdAt": "2025-02-02T10:15:00.000Z"
+  },
+  {
+    "bookId": 3,
+    "createdAt": "2025-10-01T00:45:00.476Z",
+    "title": "Deja de ser tú",
+    "author": "Joe Dispenza",
+    "genre": "Neurociencia",
+    "language": "Español",
+    "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5aj1TLhABSXb265OIta1rMTPqMeVHAsePfw&s",
+    "description": "Este libro explica cómo cambiar patrones de pensamiento y comportamiento negativos a través de la comprensión del funcionamiento del cerebro, la física cuántica y la meditación, ofreciendo un método para transformar la propia realidad y crear una vida más próspera y feliz."
   }
 ]

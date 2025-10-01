@@ -1,3 +1,6 @@
+// routes/router.ts - Enrutador dinámico
+// Escanea esta carpeta y automáticamente monta cada archivo *.router.ts
+// en una ruta con el nombre del archivo. Ej: books.router.ts -> /books
 import { Router, type Request, type Response } from "express";
 import { readdirSync } from "fs";
 import * as z from "zod";
@@ -10,13 +13,13 @@ export const __dirname = dirname(__filename)
 const router = Router()
 const PATH = (`${__dirname}`)
 
-// quitarle el .ts
+// Quita la extensión .ts para producir el nombre base del módulo
 const cleanFileName = (fileName: string) => {
     const file = fileName.split('.').shift()
     return file
 }
 
-// escanear los archivos que hay dentro de la ruta routes
+// Lee todos los archivos de esta carpeta y registra sus routers
 readdirSync(PATH).filter((fileName) => {
     const cleanName = cleanFileName(fileName)
     if (cleanName && cleanName !== "router") {
@@ -27,27 +30,5 @@ readdirSync(PATH).filter((fileName) => {
         })
     }
 })
-
-// EJEMPLO ZOD
-// // para no hacer la validación en el tiempo de ejecución de usa zod:
-// const bookSchema = z.object({
-//     title: z.string(),
-//     name: z.string(),
-//     year: z.string()
-// })
-
-// // a partir de esto se puede crear un objeto 
-// type Book = z.infer<typeof bookSchema>
-// router.post("/", req: Request, res: Response) => {
-//     const parseResult = bookSchema.safeParse(require.body)
-//     if(!parseResult.success){
-
-//     }
-//     const book: Book = parseResult.data
-
-// } 
-
-
-
 
 export { router }

@@ -4,7 +4,7 @@
     "name": "Ana",
     "lastName": "Gómez",
     "email": "ana.gomez@example.com",
-    "passwordHash": "hashed_password_123",
+  "passwordHash": "$2b$10$Nj6CD8gjod9yAGrI4PgqbeQmujq5U4s6.DI6FFUnPth9.x7o8aG/a",
     "phone": 3001234567,
     "address": "Calle 45 #12-34, Medellín",
     "role": "user",
@@ -16,7 +16,7 @@
     "name": "Carlos",
     "lastName": "Pérez",
     "email": "carlos.perez@example.com",
-    "passwordHash": "hashed_password_456",
+  "passwordHash": "$2b$10$Nj6CD8gjod9yAGrI4PgqbeQmujq5U4s6.DI6FFUnPth9.x7o8aG/a",
     "phone": 3019876543,
     "address": "Carrera 80 #15-20, Bogotá",
     "role": "admin",
@@ -25,14 +25,26 @@
   },
   {
     "userId": 3,
-    "createdAt": "2025-09-28T19:53:15.379Z",
-    "updatedAt": "2025-09-28T19:53:15.379Z",
     "name": "Angélica",
     "lastName": "Cuervo",
     "email": "angelica.cuervo@example.com",
-    "passwordHash": "$2b$10$5jmGLBne5vcbtYkFwl9DYeR0jXA4JaaB5wcwYIsP92gPc0wv6nSAi",
+  "passwordHash": "$2b$10$Nj6CD8gjod9yAGrI4PgqbeQmujq5U4s6.DI6FFUnPth9.x7o8aG/a",
     "phone": 3001234567,
     "address": "Calle 50 #23-45, Medellín",
-    "role": "user"
+    "role": "user",
+    "createdAt": "2025-09-28T19:53:15.379Z",
+    "updatedAt": "2025-09-28T19:53:15.379Z"
+  },
+  {
+    "userId": 4,
+    "name": "a",
+    "lastName": "a",
+    "email": "a@gmail.com",
+  "passwordHash": "$2b$10$Nj6CD8gjod9yAGrI4PgqbeQmujq5U4s6.DI6FFUnPth9.x7o8aG/a",
+    "phone": "111111",
+    "address": "cr # 4",
+    "role": "user",
+    "createdAt": "2025-09-29T20:36:17.475Z",
+    "updatedAt": "2025-09-29T20:36:17.475Z"
   }
 ]
